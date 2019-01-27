@@ -1,0 +1,142 @@
+// Include parts of Bootstrap
+@import "functions";
+@import "variables";
+@import "mixins";
+
+ul{
+    list-style: none;
+}
+
+footer{
+    background-color: #fff;
+}
+.jumbotron{
+    ul{
+        margin: 0;
+        font-size: 100%;
+        padding: 0;
+    }
+    li{
+        padding-right: 5px;
+        
+        &::after {
+            content: "|";
+            color: $gray-500;
+            padding-left: 5px;
+        }
+    }
+}
+main {
+    -ms-flex-order: 1;
+    order: 1;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+//
+// Docs examples
+//
+.example {
+    position: relative;
+    padding: 1rem;
+    margin: 1rem (-$grid-gutter-width / 2) 0;
+    border: solid $gray-100;
+    border-width: .2rem 0 0;
+    @include clearfix();
+    
+    @include media-breakpoint-up(sm) {
+        padding: 1.5rem;
+        margin-right: 0;
+        margin-left: 0;
+        border-width: .2rem;
+    }
+    
+    + .highlight,
+    + .clipboard + .highlight {
+        margin-top: 0;
+    }
+    
+    + p {
+        margin-top: 2rem;
+    }
+    
+    .pos-f-t {
+        position: relative;
+        margin: -1rem;
+        
+        @include media-breakpoint-up(sm) {
+            margin: -1.5rem;
+        }
+    }
+    
+    .custom-file-input:lang(es) ~ .custom-file-label::after {
+        content: "Elegir";
+    }
+    
+    > .form-control {
+        + .form-control {
+            margin-top: .5rem;
+        }
+    }
+    
+    > .nav + .nav,
+    > .alert + .alert,
+    > .navbar + .navbar,
+    > .progress + .progress,
+    > .progress + .btn {
+        margin-top: 1rem;
+    }
+    
+    > .dropdown-menu:first-child {
+        position: static;
+        display: block;
+    }
+    
+    > .form-group:last-child {
+        margin-bottom: 0;
+    }
+    
+    > .close {
+        float: none;
+    }
+}
+
+//
+// Code snippets
+//
+.highlight {
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: $gray-100;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    
+    @include media-breakpoint-up(sm) {
+        padding: 1.5rem;
+    }
+    pre {
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        background-color: transparent;
+        border: 0;
+    }
+    pre code {
+        font-size: inherit;
+        color: $gray-900; // Effectively the base text color
+    }
+    main & {
+        margin-right: (-$grid-gutter-width / 2);
+        margin-left: (-$grid-gutter-width / 2);
+        
+        @include media-breakpoint-up(sm) {
+            margin-right: 0;
+            margin-left: 0;
+        }
+    }
+}
+@import "syntax";
